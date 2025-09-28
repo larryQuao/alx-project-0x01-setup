@@ -1,14 +1,22 @@
-const Header: React.FC<{ onClick: () => void; children: React.ReactNode }> = ({ onClick, children }) => {
+import Link from 'next/link';
+
+const Header: React.FC = () => {
   return (
-    <header className="bg-gray-800 text-white py-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">{children}</h1>
-        <button
-          onClick={onClick}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-        >
-          Click Me
-        </button>
+    <header className="bg-blue-600 text-white shadow-md py-4">
+      <div className="container mx-auto flex justify-between items-center px-4">
+        <h3 className="font-bold text-2xl">
+          <Link href="/">Daily Contents</Link>
+        </h3>
+        <nav>
+          <ul className="flex space-x-6">
+            <li className="hover:underline">
+              <Link href="/posts">Posts</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );
