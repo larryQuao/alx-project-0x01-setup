@@ -1,8 +1,9 @@
+import UserModal from '@/components/common/UserModal';
 import Header from '@/components/layout/Header';
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-full  ">
       <Header />
       <main className="flex-grow flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600">
         <div className="text-center">
@@ -17,6 +18,22 @@ const Home: React.FC = () => {
           </button>
         </div>
       </main>
+      <div className=''>
+        <UserModal id={0} name={''} username={''} email={''} address={{
+          street: '',
+          suite: '',
+          city: '',
+          zipcode: '',
+          geo: {
+            lat: '',
+            lng: ''
+          }
+        }} phone={''} website={''} company={{
+          name: '',
+          catchPhrase: '',
+          bs: ''
+        }} />
+      </div>
     </div>
   )
 };
