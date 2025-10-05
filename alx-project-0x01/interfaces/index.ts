@@ -5,6 +5,10 @@ export interface PostProps {
     body: string;
 }
 
+export interface PostPageProps {
+    posts: PostProps[];
+}
+
 export interface PostData {
     userId: number;
     id?: number;
@@ -43,11 +47,15 @@ export interface UserData {
 
 export interface UserModalProps {
     onClose: () => void;
-    onSubmit: (user: UserProps) => void;
+    onSubmit: (post: UserProps) => void;
+}
+
+export interface UserPageProps {
+    posts: UserProps[];
 }
 
 export interface UserProps {
-    id: number;
+    id: number | undefined;
     name: string;
     username: string;
     email: string;
